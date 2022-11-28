@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workshop_flutter/screens/home.dart';
+import 'package:flutter_application_1/screens/home.dart';
 
 void main() {
   runApp(const WorkshopApp());
@@ -13,7 +13,7 @@ class WorkshopApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blueGrey,
       ),
       home: const Home(),
     );

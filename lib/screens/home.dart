@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workshop_flutter/screens/game.dart';
+import 'package:flutter_application_1/screens/game.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -21,9 +21,27 @@ class Home extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: Center(
-        child: Column( // TODO: Center the content
-          children: [ // TODO: Add a TextField to get the player name and a play button that calls _changePage()
-              const Text("Home page")
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: TextField(
+                onChanged: (value) => playerName = value,
+                onSubmitted: (value) => _changePage(),
+                decoration: InputDecoration(
+                  hintText: "Enter your name",
+                  filled: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: _changePage,
+              child: const Text('Play'),
+            )
           ],
         ),
       ),

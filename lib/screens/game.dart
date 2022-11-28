@@ -14,19 +14,39 @@ class _GameState extends State<Game> {
   var _numberOfClicks = 0;
 
   _click() {
-    // TODO: Implement click function
+    setState(() {
+      _numberOfClicks++;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('title'), // TODO: change to player name
+        title: Text(widget.playerName),
       ),
       body: Center(
-        child: Column( // TODO: Center the content
-          children: [ // Todo: Add a text 'Number of clicks', a text that display the number of clicks, and a button that calls the _click() method
-            const Text('Game page'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text('Number of clicks'),
+            Text('$_numberOfClicks'),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 64),
+              child: ElevatedButton(
+                onPressed: _click,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(Icons.add),
+                    ),
+                    Text('Click me')
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
