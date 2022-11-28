@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workshop_flutter/screens/game.dart';
+import 'package:flutter_application_1/screens/game.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
